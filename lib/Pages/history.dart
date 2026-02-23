@@ -30,7 +30,7 @@ class _HistoryState extends State<History> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(top: 20),
+        padding: const EdgeInsets.only(top: 50),
         child: ListView.builder(
           itemCount: _objects.length,
           itemBuilder: (context, index) {
@@ -56,7 +56,7 @@ class _HistoryState extends State<History> {
                   errorBuilder: (context, error, stackTrace) => Container(
                     width: 50,
                     height: 50,
-                    color: Colors.grey[300],
+                    color: const Color.fromARGB(255, 24, 146, 0),
                     child: Icon(Icons.no_photography, color: Color(0xFFC0FFB3)),
                   ),
                 ),
@@ -107,10 +107,16 @@ class _HistoryState extends State<History> {
           SizedBox(height: 15),
           Center(
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF11C95A), // Color verde
+              ),
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Imprimir Detalles'),
+              child: Text(
+                'Imprimir Detalles',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
           Text(
@@ -128,10 +134,13 @@ class _HistoryState extends State<History> {
           Align(
             alignment: Alignment.bottomRight,
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF11C95A), // Color verde
+              ),
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cerrar'),
+              child: Text('Cerrar', style: TextStyle(color: Colors.white)),
             ),
           ),
         ],
